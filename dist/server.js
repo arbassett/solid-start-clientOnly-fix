@@ -15459,17 +15459,17 @@ var manifest = {
 	"/": [
 	{
 		type: "script",
-		href: "/assets/index.aaa91600.js"
+		href: "/assets/index.f5d73692.js"
 	},
 	{
 		type: "script",
-		href: "/assets/entry-client.8fedd974.js"
+		href: "/assets/entry-client.20028a1c.js"
 	}
 ],
 	"entry-client": [
 	{
 		type: "script",
-		href: "/assets/entry-client.8fedd974.js"
+		href: "/assets/entry-client.20028a1c.js"
 	}
 ],
 	"index.html": [
@@ -15721,11 +15721,56 @@ function ErrorBoundary$1(props) {
   };
 }
 const SuspenseContext = createContext();
+function lazy(fn) {
+  let p;
+  let load = id => {
+    if (!p) {
+      p = fn();
+      p.then(mod => p.resolved = mod.default);
+      if (id) sharedConfig.context.lazy[id] = p;
+    }
+    return p;
+  };
+  const contexts = new Set();
+  const wrap = props => {
+    const id = sharedConfig.context.id.slice(0, -1);
+    let ref = sharedConfig.context.lazy[id];
+    if (ref) p = ref;else load(id);
+    if (p.resolved) return p.resolved(props);
+    const ctx = useContext(SuspenseContext);
+    const track = {
+      loading: true,
+      error: undefined
+    };
+    if (ctx) {
+      ctx.resources.set(id, track);
+      contexts.add(ctx);
+    }
+    if (sharedConfig.context.async) {
+      sharedConfig.context.block(p.then(() => {
+        track.loading = false;
+        notifySuspense(contexts);
+      }));
+    }
+    return "";
+  };
+  wrap.preload = load;
+  return wrap;
+}
 function suspenseComplete(c) {
   for (const r of c.resources.values()) {
     if (r.loading) return false;
   }
   return true;
+}
+function notifySuspense(contexts) {
+  for (const c of contexts) {
+    if (!suspenseComplete(c)) {
+      continue;
+    }
+    c.completed();
+    contexts.delete(c);
+  }
 }
 function startTransition(fn) {
   fn();
@@ -17755,7 +17800,7 @@ function renderTags(tags) {
 }
 const Meta$1 = props => MetaTag("meta", props);
 
-const _tmpl$$1 = ["<div", " style=\"", "\"><div style=\"", "\"><p style=\"", "\" id=\"error-message\">", "</p><button id=\"reset-errors\" style=\"", "\">Clear errors and retry</button><pre style=\"", "\">", "</pre></div></div>"];
+const _tmpl$$2 = ["<div", " style=\"", "\"><div style=\"", "\"><p style=\"", "\" id=\"error-message\">", "</p><button id=\"reset-errors\" style=\"", "\">Clear errors and retry</button><pre style=\"", "\">", "</pre></div></div>"];
 function ErrorBoundary(props) {
   return createComponent(ErrorBoundary$1, {
     fallback: (e, reset) => {
@@ -17779,7 +17824,7 @@ function ErrorBoundary(props) {
   });
 }
 function ErrorMessage(props) {
-  return ssr(_tmpl$$1, ssrHydrationKey(), "padding:" + "16px", "background-color:" + "rgba(252, 165, 165)" + (";color:" + "rgb(153, 27, 27)") + (";border-radius:" + "5px") + (";overflow:" + "scroll") + (";padding:" + "16px") + (";margin-bottom:" + "8px"), "font-weight:" + "bold", escape(props.error.message), "color:" + "rgba(252, 165, 165)" + (";background-color:" + "rgb(153, 27, 27)") + (";border-radius:" + "5px") + (";padding:" + "4px 8px"), "margin-top:" + "8px" + (";width:" + "100%"), escape(props.error.stack));
+  return ssr(_tmpl$$2, ssrHydrationKey(), "padding:" + "16px", "background-color:" + "rgba(252, 165, 165)" + (";color:" + "rgb(153, 27, 27)") + (";border-radius:" + "5px") + (";overflow:" + "scroll") + (";padding:" + "16px") + (";margin-bottom:" + "8px"), "font-weight:" + "bold", escape(props.error.message), "color:" + "rgba(252, 165, 165)" + (";background-color:" + "rgb(153, 27, 27)") + (";border-radius:" + "5px") + (";padding:" + "4px 8px"), "margin-top:" + "8px" + (";width:" + "100%"), escape(props.error.stack));
 }
 
 // not using Suspense
@@ -17794,7 +17839,7 @@ const routeLayouts = {
   }
 };
 
-const _tmpl$ = ["<link", " rel=\"stylesheet\"", ">"],
+const _tmpl$$1 = ["<link", " rel=\"stylesheet\"", ">"],
   _tmpl$2 = ["<link", " rel=\"modulepreload\"", ">"];
 function flattenIslands(match, manifest) {
   let result = [...match];
@@ -17824,7 +17869,7 @@ function getAssetsFromManifest(manifest, routerContext) {
   match.push(...(manifest["entry-client"] || []));
   match = manifest ? flattenIslands(match, manifest) : [];
   const links = match.reduce((r, src) => {
-    r[src.href] = src.type === "style" ? ssr(_tmpl$, ssrHydrationKey(), ssrAttribute("href", escape(src.href, true), false)) : src.type === "script" ? ssr(_tmpl$2, ssrHydrationKey(), ssrAttribute("href", escape(src.href, true), false)) : undefined;
+    r[src.href] = src.type === "style" ? ssr(_tmpl$$1, ssrHydrationKey(), ssrAttribute("href", escape(src.href, true), false)) : src.type === "script" ? ssr(_tmpl$2, ssrHydrationKey(), ssrAttribute("href", escape(src.href, true), false)) : undefined;
     return r;
   }, {});
   return Object.values(links);
@@ -17875,6 +17920,8 @@ function Body(props) {
   }
 }
 
+const _tmpl$ = ["<div", "><!--#-->", "<!--/--><!--#-->", "<!--/--></div>"];
+
 // import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 // import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
 // import tsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
@@ -17882,6 +17929,7 @@ function Body(props) {
 // import { isServer } from 'solid-js/web';
 
 const Editor = clientOnly();
+const Lazy = lazy(() => import('./Lazy.b41f2dd3-bba4a033.js'));
 
 // if (!isServer) {
 //   window.MonacoEnvironment = {
@@ -17902,9 +17950,9 @@ const Editor = clientOnly();
 // }
 
 function Test() {
-  return createComponent(Editor, {
+  return ssr(_tmpl$, ssrHydrationKey(), escape(createComponent(Lazy, {})), escape(createComponent(Editor, {
     fallback: 'loading...'
-  });
+  })));
 }
 
 /// <reference path="../server/types.tsx" />
@@ -18045,3 +18093,5 @@ server.listen(PORT, err => {
     console.log(`Listening on port ${PORT}`);
   }
 });
+
+export { ssrHydrationKey as a, ssr as s };
