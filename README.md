@@ -1,3 +1,3 @@
 # solid-start-clientOnly-fix
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/solid-ssr-vite-bkw6w8)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/solid-ssr-vite-bkw6w8?file=vite.config.ts)
