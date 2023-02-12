@@ -1,0 +1,35 @@
+{
+  "name": "solid-start-repro",
+  "scripts": {
+    "dev": "solid-start dev",
+    "build": "solid-start build",
+    "start": "solid-start start"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@solidjs/meta": "^0.28.2",
+    "@solidjs/router": "^0.7.0",
+    "solid-js": "^1.6.10",
+    "solid-start": "0.2.20",
+    "solid-start-node": "^0.2.20",
+    "solid-start-vercel": "^0.2.20",
+    "undici": "^5.15.1",
+    "vite": "^3.2.5",
+    "rollup": "3.14.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.35.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "solid-start-vercel@0.2.20": "patches/solid-start-vercel@0.2.20.patch",
+      "solid-start@0.2.20": "patches/solid-start@0.2.20.patch"
+    }
+  },
+  "stackblitz": {
+    "startCommand": "pnpm build && pnpm start"
+  }
+}
