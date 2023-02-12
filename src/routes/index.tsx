@@ -1,3 +1,4 @@
+import { lazy } from 'solid-js';
 import { RouteDataArgs, useRouteData, unstable_clientOnly } from 'solid-start';
 
 // import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
@@ -7,6 +8,7 @@ import { RouteDataArgs, useRouteData, unstable_clientOnly } from 'solid-start';
 // import { isServer } from 'solid-js/web';
 
 const Editor = unstable_clientOnly(() => import('~/components/Editor'));
+const Lazy = lazy(() => import('~/components/Lazy'));
 
 // if (!isServer) {
 //   window.MonacoEnvironment = {
@@ -27,5 +29,10 @@ const Editor = unstable_clientOnly(() => import('~/components/Editor'));
 // }
 
 export default function Test() {
-  return <Editor fallback={'loading...'} />;
+  return (
+    <div>
+      <Lazy />
+      <Editor fallback={'loading...'} />
+    </div>
+  );
 }
