@@ -4,7 +4,7 @@
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/base/browser/ui/codicons/codicon/codicon.ttf"
   },
   "src/entry-client.tsx": {
-    "file": "assets/entry-client.20028a1c.js",
+    "file": "assets/entry-client.2c1074b9.js",
     "src": "src/entry-client.tsx",
     "isEntry": true,
     "dynamicImports": [
@@ -12,19 +12,19 @@
     ]
   },
   "src/routes/index.tsx": {
-    "file": "assets/index.f5d73692.js",
+    "file": "assets/index.80ee14cd.js",
     "src": "src/routes/index.tsx",
     "isDynamicEntry": true,
     "imports": [
       "src/entry-client.tsx"
     ],
     "dynamicImports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/components/Lazy.tsx"
     ]
   },
-  "_Editor.7a385a60.js": {
-    "file": "assets/Editor.7a385a60.js",
+  "_Editor.d03c4e0f.js": {
+    "file": "assets/Editor.d03c4e0f.js",
     "isDynamicEntry": true,
     "imports": [
       "src/entry-client.tsx"
@@ -121,7 +121,7 @@
     ]
   },
   "src/components/Lazy.tsx": {
-    "file": "assets/Lazy.26258f5e.js",
+    "file": "assets/Lazy.1a885446.js",
     "src": "src/components/Lazy.tsx",
     "isDynamicEntry": true,
     "imports": [
@@ -224,11 +224,11 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/freemarker2/freemarker2.js": {
-    "file": "assets/freemarker2.e9301f15.js",
+    "file": "assets/freemarker2.2591d868.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/freemarker2/freemarker2.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -243,11 +243,11 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/handlebars/handlebars.js": {
-    "file": "assets/handlebars.924abdb5.js",
+    "file": "assets/handlebars.d5bd06ab.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/handlebars/handlebars.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -257,11 +257,11 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/html/html.js": {
-    "file": "assets/html.b2e20518.js",
+    "file": "assets/html.ca68f220.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/html/html.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -276,21 +276,21 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.js": {
-    "file": "assets/javascript.68a6bfd5.js",
+    "file": "assets/javascript.3a2fc067.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/javascript/javascript.js",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/typescript/typescript.js",
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/typescript/typescript.js": {
-    "file": "assets/typescript.75d681b0.js",
+    "file": "assets/typescript.f47992a8.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/typescript/typescript.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -320,11 +320,11 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/liquid/liquid.js": {
-    "file": "assets/liquid.fac0659f.js",
+    "file": "assets/liquid.0f22cccb.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/liquid/liquid.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -414,11 +414,11 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/python/python.js": {
-    "file": "assets/python.344a57ba.js",
+    "file": "assets/python.61e27775.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/python/python.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -433,11 +433,11 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/razor/razor.js": {
-    "file": "assets/razor.79f65d62.js",
+    "file": "assets/razor.1e9e382a.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/razor/razor.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
@@ -542,56 +542,56 @@
     "isDynamicEntry": true
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/xml/xml.js": {
-    "file": "assets/xml.418a9101.js",
+    "file": "assets/xml.2a7e100f.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/xml/xml.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/yaml/yaml.js": {
-    "file": "assets/yaml.5f8bdd71.js",
+    "file": "assets/yaml.d77fa930.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/basic-languages/yaml/yaml.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/css/cssMode.js": {
-    "file": "assets/cssMode.0dd10703.js",
+    "file": "assets/cssMode.2ac7de72.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/css/cssMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/html/htmlMode.js": {
-    "file": "assets/htmlMode.087dfff6.js",
+    "file": "assets/htmlMode.9f4197cf.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/html/htmlMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/json/jsonMode.js": {
-    "file": "assets/jsonMode.ff8bb110.js",
+    "file": "assets/jsonMode.a91bca83.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/json/jsonMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
   "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/typescript/tsMode.js": {
-    "file": "assets/tsMode.684ffb47.js",
+    "file": "assets/tsMode.71fa99a6.js",
     "src": "node_modules/.pnpm/monaco-editor@0.35.0/node_modules/monaco-editor/esm/vs/language/typescript/tsMode.js",
     "isDynamicEntry": true,
     "imports": [
-      "_Editor.7a385a60.js",
+      "_Editor.d03c4e0f.js",
       "src/entry-client.tsx"
     ]
   },
